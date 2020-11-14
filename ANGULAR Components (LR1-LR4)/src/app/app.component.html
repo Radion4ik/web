@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Angular Component</h1>
+  <app-post-form (addPostUser)="updatePosts($event)" (titleSearch)="filterTitles($event)" (titleBool)="filterBool($event)"> 
+  </app-post-form>
+  <hr />
+  <app-post *ngFor="let p of posts | filter: titleS: titleB" [post]="p"  (postid)="removeIdPost($event)">
+  <small *ngIf="p.text.length>10; else small">Post is long</small>
+<ng-template #small >
+ <small> Post is short</small>
+</ng-template>
+</app-post>
+  </div>
+  

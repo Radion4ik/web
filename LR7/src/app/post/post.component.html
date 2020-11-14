@@ -1,0 +1,18 @@
+<div>
+  <button class="btn" (click)="goToOwner()">Back</button>
+
+  <h1>Title</h1>
+
+  <p>Text</p>
+
+  <button class="btn btn-danger" (click)="Load4Posts()">Load 4 post</button>
+  <div class="visible:none"  id="test" *ngFor="let post of (postS$ | async)?.id">
+    <h4>
+      <a [routerLink]="['/post',post.id]">
+        <strong>(ID {{post.id}})</strong>
+        {{post.title}}
+      </a>
+    </h4>
+  </div>
+   
+</div>
